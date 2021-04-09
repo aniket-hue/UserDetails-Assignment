@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Switch } from 'react-router';
+import { PostPage } from './Components/PostPage/PostPage';
+import { UserDetailsPage } from './Components/UserDetailsPage';
+import { DataContextProvider } from './Context/DataContext';
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataContextProvider>
+      <div className="d-flex">
+        <Switch>
+          <Route path="/" component={PostPage} exact />
+          <Route path="/user/:userId" component={UserDetailsPage} />
+        </Switch>
+      </div>
+    </DataContextProvider>
   );
-}
-
-export default App;
+};
