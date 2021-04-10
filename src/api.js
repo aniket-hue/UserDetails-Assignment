@@ -14,7 +14,7 @@ export const fetchData = async (type) => {
 };
 
 export const postNewPost = async (userId, title, body) => {
-  const url = 'https://jsonplaceholder.typicode.com/posts';
+  const url = `${API_URL}/posts`;
   const response = await fetch(url, {
     method: 'POST',
     body: JSON.stringify({

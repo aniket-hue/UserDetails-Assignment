@@ -13,7 +13,7 @@ export const UserDetailsPage = () => {
   return (
     <div className="container">
       <div id="user-details" className="container d-flex">
-        <div className="card mt-2 mb-2">
+        <div className="card mt-2 mb-2 w-100">
           <div className="card-body">
             <h5 className="card-title text-primary">{userData.name}</h5>
             <h6>
@@ -41,7 +41,7 @@ export const UserDetailsPage = () => {
           </div>
 
           <div id="post-list" className="container d-flex">
-            <ul className="list-group list-group-flush">
+            <ul className="list-group list-group-flush w-100">
               {userData.posts.sort(lexographicallySortFunction).map((post) => (
                 <li className="list-group-item text-capitalize text-secondary">
                   {post}
